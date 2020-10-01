@@ -2,7 +2,7 @@
 
 git clone --quiet https://github.com/$REPO &> /dev/null
 
-tag=$(git tag --sort version:refname | tail -n 2 | head -n 1)
+tag=$(git tag --sort version:refname | tail -n 1)
 
 if [ "$tag" ]; then
   changelog=$(git log --oneline --no-decorate $tag..HEAD)
